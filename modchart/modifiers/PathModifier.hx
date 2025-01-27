@@ -57,9 +57,14 @@ class PathModifier extends Modifier {
 		return true;
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
+@:publicFields
 @:structInit
 class PathNode {
-	public var x:Float;
-	public var y:Float;
-	public var z:Float;
+	var x:Float;
+	var y:Float;
+	var z:Float;
 }

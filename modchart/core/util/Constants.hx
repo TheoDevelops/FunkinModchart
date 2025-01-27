@@ -1,67 +1,94 @@
 package modchart.core.util;
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
 class Constants {
 	public static var MODIFIER_LIST:Map<String, Class<Modifier>>;
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
+@:publicFields
 @:structInit
 class RenderParams {
-	public var sPos:Float;
-	public var time:Float;
-	public var fBeat:Float;
-	public var hDiff:Float;
-	public var receptor:Int;
-	public var field:Int;
-	public var arrow:Bool;
+	var sPos:Float;
+	var time:Float;
+	var fBeat:Float;
+	var hDiff:Float;
+	var receptor:Int;
+	var field:Int;
+	var arrow:Bool;
 
 	// for hold mods
-	public var __holdParentTime:Float = 0;
-	public var __holdLength:Float = 0;
-	public var __holdOffset:Float = 0;
+	var __holdParentTime:Float = 0;
+	var __holdLength:Float = 0;
+	var __holdOffset:Float = 0;
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
+@:publicFields
 @:structInit
 class ArrowData {
-	public var time:Float;
-	public var hDiff:Float;
-	public var receptor:Int;
-	public var field:Int;
-	public var arrow:Bool;
+	var time:Float;
+	var hDiff:Float;
+	var receptor:Int;
+	var field:Int;
+	var arrow:Bool;
 
 	// for hold mods
-	public var __holdParentTime:Float = 0;
-	public var __holdLength:Float = 0;
-	public var __holdOffset:Float = 0;
+	var __holdParentTime:Float = 0;
+	var __holdLength:Float = 0;
+	var __holdOffset:Float = 0;
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
+@:publicFields
 @:structInit
 class Visuals {
-	public var scaleX:Float = 1;
-	public var scaleY:Float = 1;
-	public var alpha:Float = 1;
-	public var zoom:Float = 0;
-	public var glow:Float = 0;
-	public var glowR:Float = 1;
-	public var glowG:Float = 1;
-	public var glowB:Float = 1;
-	public var angleX:Float = 0;
-	public var angleY:Float = 0;
-	public var angleZ:Float = 0;
-	public var skewX:Float = 0;
-	public var skewY:Float = 0;
+	var scaleX:Float = 1;
+	var scaleY:Float = 1;
+	var alpha:Float = 1;
+	var zoom:Float = 0;
+	var glow:Float = 0;
+	var glowR:Float = 1;
+	var glowG:Float = 1;
+	var glowB:Float = 1;
+	var angleX:Float = 0;
+	var angleY:Float = 0;
+	var angleZ:Float = 0;
+	var skewX:Float = 0;
+	var skewY:Float = 0;
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
 @:publicFields
 @:structInit
 class Node {
-	public var input:Array<String> = [];
-	public var output:Array<String> = [];
-	public var func:NodeFunction = (_, o) -> _;
+	var input:Array<String> = [];
+	var output:Array<String> = [];
+	var func:NodeFunction = (_, o) -> _;
 }
 
 // (InputModPercents, PlayerNumber) -> OutputModPercents
 typedef NodeFunction = (Array<Float>, Int) -> Array<Float>;
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
 class SimplePoint {
 	public var x:Float;
 	public var y:Float;

@@ -577,6 +577,10 @@ class ModchartProxyRenderer extends ModchartRenderer<FlxCamera> {
 	override public function prepare(cam:FlxCamera):Void {}
 }
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
 @:publicFields
 @:structInit
 class FMDrawInstruction {

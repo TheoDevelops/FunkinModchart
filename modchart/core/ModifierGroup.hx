@@ -12,6 +12,10 @@ import modchart.modifiers.*;
 import modchart.modifiers.false_paradise.*;
 import openfl.geom.Vector3D;
 
+#if !modchart_debug
+@:fileXml('tags="haxe,release"')
+@:noDebug
+#end
 @:structInit
 @:publicFields
 class ModifierOutput {
