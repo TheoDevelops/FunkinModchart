@@ -52,6 +52,14 @@ class Event {
 		return parent.pf.getPercent(name, player);
 	}
 
+	public inline function unsafeSet(id, value, player) {
+		parent.pf.__setUnsafe(id, value, player);
+	}
+
+	public inline function unsafeGet(id, player):Float {
+		return parent.pf.__getUnsafe(id, player);
+	}
+
 	inline public function getType():EventType {
 		return type;
 	}

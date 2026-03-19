@@ -6,6 +6,7 @@ class SetEvent extends Event {
 		this.target = target;
 		this.player = player;
 
+		// we dont need caching the id, since this only runs once
 		super(beat, (_) -> {
 			setModPercent(mod, target, player);
 		}, parent);

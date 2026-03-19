@@ -37,7 +37,7 @@ class EaseEvent extends Event {
 			if (entryPerc == null)
 				entryPerc = ModchartUtil.findEntryFrom(this);
 
-			var progress = (curBeat - startBeat) / (endBeat - startBeat);
+			var progress = (curBeat - startBeat) / beatLength;
 			// maybe we should make it use bound?
 			var out = FlxMath.lerp(entryPerc, target, ease(progress));
 			setModPercent(name, out, player);

@@ -8,9 +8,11 @@ import flixel.math.FlxAngle;
 import flixel.math.FlxMath;
 import flixel.math.FlxRect;
 import haxe.ds.Vector;
+import haxe.ds.Vector;
 import modchart.engine.events.Event;
 import modchart.engine.events.types.AddEvent;
 import modchart.engine.events.types.EaseEvent;
+import openfl.geom.ColorTransform;
 import openfl.geom.Matrix3D;
 
 using StringTools;
@@ -223,6 +225,36 @@ using StringTools;
 		}
 
 		return uv;
+	}
+
+	inline static public function cloneDrawCmd(cmd:DrawCommand):DrawCommand {
+		@:privateAccess
+		return {
+			parent: cmd.parent,
+
+			graphic: cmd.graphic,
+			antialiasing: cmd.antialiasing,
+			blend: cmd.blend,
+			shader: cmd.shader,
+			cameras: cmd.cameras,
+
+			vertices: cmd.vertices.copy(),
+			uvs: cmd.uvs.copy(),
+			indices: cmd.indices.copy(),
+
+			isColored: cmd.isColored,
+			hasColorOffsets: cmd.hasColorOffsets,
+
+			color: cmd.color != null ? cmd.color.__clone() : null,
+			colors: cmd.colors != null ? {
+				var _ = new Vector<ColorTransform>(cmd.colors.length);
+				for (i in 0...cmd.colors.length)
+					_[i] = cmd.colors[i].__clone();
+				_;
+			} : null,
+
+			zIndex: cmd.zIndex
+		}
 	}
 
 	/**

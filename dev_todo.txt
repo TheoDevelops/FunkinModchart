@@ -1,0 +1,3 @@
+change adapter getItems functions ?? maybe a struct instead of a flat matrix??
+
+proxy can decide what to render???
