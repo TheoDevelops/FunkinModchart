@@ -1,11 +1,11 @@
-.git
+# .git
 
-# currently on dev
-modchart/backend/environments/*
-modchart/backend/IEnvironment.hx
+# # currently on dev
+# modchart/backend/environments/*
+# modchart/backend/IEnvironment.hx
 
-documentation/*
-documentation/hx*
-documentation/psych-lua*
-assert/*
-concepts/*
+# documentation/*
+# documentation/hx*
+# documentation/psych-lua*
+# assert/*
+# concepts/*

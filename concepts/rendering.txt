@@ -1,0 +1,8 @@
+ModchartRenderer
+- pushData(cameras, graphic, vert, ind, uv, z)
+
+- render():
+    - z index tris
+    - build up calls by batching (matching camera, shader, blend, antialias)
+    - render
+
